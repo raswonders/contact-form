@@ -1,3 +1,4 @@
+import { Checkbox } from "./Checkbox";
 import { Message } from "./Message";
 import { RadioSelection } from "./RadioSelection";
 import { TextField } from "./TextField";
@@ -13,8 +14,8 @@ export function Card() {
         legend="Query Type"
         labels={["General Enquiry", "Support Request"]}
       />
-      <Message /> 
-      {/* <Checkbox lavel="I consent to being contacted by the team" /> */}
+      <Message />
+      <Checkbox label="I consent to being contacted by the team" />
     </main>
   );
 }
