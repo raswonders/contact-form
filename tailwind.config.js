@@ -10,7 +10,7 @@ export default {
         "green-600": "rgba(12, 125, 105, 1)",
         "green-200": "rgba(224, 241, 232, 1)",
         red: "rgba(215, 60, 60, 1)",
-      },
+      }, 
       fontFamily: {
         karla: "Karla",
         inter: "Inter",
