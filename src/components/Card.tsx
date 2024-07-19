@@ -8,9 +8,12 @@ export function Card() {
       <TextField label="First Name" />
       <TextField label="Last Name" />
       <TextField label="Email Address" />
-      <RadioSelection label="Query Type" />
-      <Message />
-      <Checkbox lavel="I consent to being contacted by the team" />
+      <RadioSelection
+        legend="Query Type"
+        labels={["General Enquiry", "Support Request"]}
+      />
+      {/* <Message /> */}
+      {/* <Checkbox lavel="I consent to being contacted by the team" /> */}
     </main>
-  )
+  );
 }
