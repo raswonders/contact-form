@@ -10,9 +10,15 @@ const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
 
 export function Card() {
   return (
-    <main className="w-80 flex flex-col bg-white rounded-lg space-y-2">
-      <h1>Contact Us</h1>
-      <form action="" onSubmit={handleSubmit} className="flex flex-col">
+    <main className="w-80 p-6 flex flex-col bg-white rounded-[16px] space-y-8">
+      <h1 className="text-gray-900 text-[32px] -tracking-[1px] leading-none font-karla font-bold">
+        Contact Us
+      </h1>
+      <form
+        action=""
+        onSubmit={handleSubmit}
+        className="flex flex-col space-y-6"
+      >
         <TextField label="First Name" />
         <TextField label="Last Name" />
         <TextField label="Email Address" />
