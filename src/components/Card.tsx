@@ -1,3 +1,4 @@
+import { Button } from "./Button";
 import { Checkbox } from "./Checkbox";
 import { Message } from "./Message";
 import { RadioSelection } from "./RadioSelection";
@@ -16,6 +17,7 @@ export function Card() {
       />
       <Message />
       <Checkbox label="I consent to being contacted by the team" />
+      <Button value="Submit" onClick={() => {}} />
     </main>
   );
 }
