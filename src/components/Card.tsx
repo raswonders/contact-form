@@ -3,7 +3,7 @@ import { TextField } from "./TextField";
 
 export function Card() {
   return (
-    <main>
+    <main className="w-80 flex flex-col items-center bg-white rounded-lg space-y-2">
       <h1>Contact us</h1>
       <TextField label="First Name" />
       <TextField label="Last Name" />
