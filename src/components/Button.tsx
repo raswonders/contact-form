@@ -1,9 +1,9 @@
 export function Button({
   value,
-  onClick,
+  type = "button",
 }: {
   value: string;
-  onClick: () => void;
+  type?: string;
 }) {
-  return <input type="button" value={value} onClick={onClick} />;
+  return <input type={type} value={value} />;
 }
