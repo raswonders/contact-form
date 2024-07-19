@@ -6,7 +6,7 @@ export function TextField({ label }: { label: string }) {
   return (
     <>
       <input type="text" id={id} />
-      <label htmlFor={id}>{label}</label>;
+      <label htmlFor={id}>{label}</label>
     </>
   );
 }
