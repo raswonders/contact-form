@@ -1,7 +1,9 @@
+import { Card } from "./components/Card";
+
 function App() {
   return (
     <>
-      <h1 className="text-green-500">rtt-vite-template</h1>
+      <Card />
     </>
   );
 }
