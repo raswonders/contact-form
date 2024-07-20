@@ -5,7 +5,9 @@ import { RadioSelection } from "./RadioSelection";
 import { TextField } from "./TextField";
 
 const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-  alert("submitted");
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  console.log([...data.entries()]);
 };
 
 export function Card() {

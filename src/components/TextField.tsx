@@ -1,6 +1,11 @@
 import { useId } from "react";
+import { toFieldName } from "../utils";
 
-export function TextField({ label }: { label: string }) {
+interface TextFieldProps {
+  label: string;
+}
+
+export function TextField({ label }: TextFieldProps) {
   const id = useId();
 
   return (
@@ -9,7 +14,12 @@ export function TextField({ label }: { label: string }) {
         {label}
         <span className="px-1 text-green-600">*</span>
       </label>
-      <input className="border border-gray-500 py-3 px-8 rounded-lg" type="text" id={id} />
+      <input
+        className="border border-gray-500 py-3 px-8 rounded-lg"
+        name={toFieldName(label)}
+        type="text"
+        id={id}
+      />
     </div>
   );
 }
