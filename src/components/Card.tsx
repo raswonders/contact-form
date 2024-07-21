@@ -25,8 +25,8 @@ export function Card() {
         <TextField label="Last Name" />
         <TextField label="Email Address" />
         <RadioSelection
-          legend="Query Type"
-          labels={["General Enquiry", "Support Request"]}
+          title="Query Type"
+          options={["General Enquiry", "Support Request"]}
         />
         <Message />
         <Checkbox label="I consent to being contacted by the team" />

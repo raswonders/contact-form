@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { toFieldName } from "../utils";
+import { toCamelCase } from "../utils";
 
 interface TextFieldProps {
   label: string;
@@ -16,7 +16,7 @@ export function TextField({ label }: TextFieldProps) {
       </label>
       <input
         className="border border-gray-500 py-3 px-8 rounded-lg"
-        name={toFieldName(label)}
+        name={toCamelCase(label)}
         type="text"
         id={id}
       />

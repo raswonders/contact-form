@@ -1,22 +1,25 @@
-import { useId } from "react";
+import { toCamelCase } from "../utils";
 
-export function RadioSelection({
-  legend,
-  labels,
-}: {
-  legend: string;
-  labels: string[];
-}) {
-  const id = useId();
+interface RadioSelectionProps {
+  title: string;
+  options: string[];
+}
 
+export function RadioSelection({ title, options }: RadioSelectionProps) {
   return (
     <fieldset>
-      <legend>{legend}</legend>
-      {labels.map((label, index) => {
+      <legend>{title}</legend>
+      {options.map((option, i) => {
         return (
-          <div key={label}>
-            <input type="radio" id={id + "-option" + index} />
-            <label htmlFor={id + "-option" + index}>{label}</label>
+          <div key={option}>
+            <input
+              {...(i === 0 ? { defaultChecked: true } : {})}
+              name={toCamelCase(title)}
+              type="radio"
+              value={option}
+              id={`option${i}`}
+            />
+            <label htmlFor={`option${i}`}>{option}</label>
           </div>
         );
       })}
