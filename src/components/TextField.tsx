@@ -9,13 +9,13 @@ export function TextField({ label }: TextFieldProps) {
   const id = useId();
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="space-y-2">
       <label className="font-karla" htmlFor={id}>
         {label}
         <span className="px-1 text-green-600">*</span>
       </label>
       <input
-        className="border border-gray-500 py-3 px-8 rounded-lg"
+        className="w-full border border-gray-500 py-3 px-6 rounded-lg"
         name={toCamelCase(label)}
         type="text"
         id={id}
