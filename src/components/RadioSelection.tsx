@@ -7,11 +7,17 @@ interface RadioSelectionProps {
 
 export function RadioSelection({ title, options }: RadioSelectionProps) {
   return (
-    <fieldset>
-      <legend>{title}</legend>
+    <fieldset className="space-y-4">
+      <legend className="font-karla">
+        {title}
+        <span className="px-1 text-green-600">*</span>
+      </legend>
       {options.map((option, i) => {
         return (
-          <div key={option}>
+          <div
+            key={option}
+            className="flex gap-3 border border-gray-500 py-3 px-6 rounded-lg"
+          >
             <input
               {...(i === 0 ? { defaultChecked: true } : {})}
               name={toCamelCase(title)}
@@ -19,7 +25,9 @@ export function RadioSelection({ title, options }: RadioSelectionProps) {
               value={option}
               id={`option${i}`}
             />
-            <label htmlFor={`option${i}`}>{option}</label>
+            <label className="font-karla text-lg" htmlFor={`option${i}`}>
+              {option}
+            </label>
           </div>
         );
       })}
