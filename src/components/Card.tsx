@@ -29,7 +29,10 @@ export function Card() {
           options={["General Enquiry", "Support Request"]}
         />
         <Message />
-        <Checkbox label="I consent to being contacted by the team" />
+        <Checkbox
+          name="consent"
+          label="I consent to being contacted by the team"
+        />
         <Button type="submit" value="Submit" />
       </form>
     </main>

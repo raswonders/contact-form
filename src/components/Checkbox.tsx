@@ -1,13 +1,19 @@
 import { useId } from "react";
 
-export function Checkbox({ label }: { label: string }) {
+interface CheckboxProps {
+  label: string;
+  name: string;
+}
+
+export function Checkbox({ label, name }: CheckboxProps) {
   const id = useId();
 
   return (
-    <div>
-      <input type="checkbox" id={id} />
-      <label className="" htmlFor={id}>
+    <div className="flex space-x-4">
+      <input type="checkbox" name={name} id={id} />
+      <label className="font-karla" htmlFor={id}>
         {label}
+        <span className="px-1 text-green-600">*</span>
       </label>
     </div>
   );
