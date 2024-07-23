@@ -17,7 +17,7 @@ export function TextField({ label, required }: TextFieldProps) {
         <Marker required={required} />
       </label>
       <input
-        className="w-full border border-gray-500 py-3 px-6 rounded-lg"
+        className="w-full border border-gray-500  py-3 px-6 rounded-lg"
         name={toCamelCase(label)}
         type="text"
         id={id}
