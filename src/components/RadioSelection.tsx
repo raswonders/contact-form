@@ -1,16 +1,22 @@
 import { toCamelCase } from "../utils";
+import { Marker } from "./Marker";
 
 interface RadioSelectionProps {
   title: string;
   options: string[];
+  required?: boolean;
 }
 
-export function RadioSelection({ title, options }: RadioSelectionProps) {
+export function RadioSelection({
+  title,
+  options,
+  required,
+}: RadioSelectionProps) {
   return (
     <fieldset className="space-y-4">
       <legend className="font-karla">
         {title}
-        <span className="px-1 text-green-600">*</span>
+        <Marker required={required} />
       </legend>
       {options.map((option, i) => {
         return (

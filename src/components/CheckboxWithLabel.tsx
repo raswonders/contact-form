@@ -1,11 +1,17 @@
 import { useId } from "react";
+import { Marker } from "./Marker";
 
-interface CheckboxProps {
+interface CheckboxWithLabelProps {
   label: string;
   name: string;
+  required?: boolean;
 }
 
-export function Checkbox({ label, name }: CheckboxProps) {
+export function CheckboxWithLabel({
+  label,
+  name,
+  required,
+}: CheckboxWithLabelProps) {
   const id = useId();
 
   return (
@@ -13,7 +19,7 @@ export function Checkbox({ label, name }: CheckboxProps) {
       <input type="checkbox" name={name} id={id} />
       <label className="font-karla" htmlFor={id}>
         {label}
-        <span className="px-1 text-green-600">*</span>
+        <Marker required={required} />
       </label>
     </div>
   );

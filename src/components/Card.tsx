@@ -1,5 +1,5 @@
 import { Button } from "./Button";
-import { Checkbox } from "./Checkbox";
+import { CheckboxWithLabel } from "./CheckboxWithLabel";
 import { Message } from "./Message";
 import { RadioSelection } from "./RadioSelection";
 import { TextField } from "./TextField";
@@ -21,17 +21,19 @@ export function Card() {
         onSubmit={handleSubmit}
         className="flex flex-col space-y-6"
       >
-        <TextField label="First Name" />
-        <TextField label="Last Name" />
-        <TextField label="Email Address" />
+        <TextField label="First Name" required />
+        <TextField label="Last Name" required />
+        <TextField label="Email Address" required />
         <RadioSelection
           title="Query Type"
           options={["General Enquiry", "Support Request"]}
+          required
         />
-        <Message />
-        <Checkbox
+        <Message required />
+        <CheckboxWithLabel
           name="consent"
           label="I consent to being contacted by the team"
+          required
         />
         <Button type="submit" value="Submit" />
       </form>
