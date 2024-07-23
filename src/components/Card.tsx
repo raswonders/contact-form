@@ -12,7 +12,7 @@ const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
 
 export function Card() {
   return (
-    <main className="w-80 p-6 flex flex-col bg-white rounded-[16px] space-y-8">
+    <main className="w-full p-6 flex flex-col bg-white rounded-[16px] space-y-8">
       <h1 className="text-gray-900 text-[32px] -tracking-[1px] leading-none font-karla font-bold">
         Contact Us
       </h1>
