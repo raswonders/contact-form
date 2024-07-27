@@ -1,4 +1,5 @@
 import { Button } from "./Button";
+import { Checkbox } from "./Checkbox";
 import { CheckboxWithLabel } from "./CheckboxWithLabel";
 import { Message } from "./Message";
 import { RadioSelection } from "./RadioSelection";
@@ -30,10 +31,10 @@ export function Card() {
           required
         />
         <Message required />
-        <CheckboxWithLabel
-          name="consent"
-          label="I consent to being contacted by the team"
+        <Checkbox
           required
+          label="I consent to being contacted by the team"
+          name="consent"
         />
         <Button type="submit" value="Submit" />
       </form>
