@@ -7,20 +7,24 @@ interface TextFieldProps {
   required?: boolean;
 }
 
-export function TextField({ label, required }: TextFieldProps) {
+export function TextField({ label, required, ...props }: TextFieldProps) {
   const id = useId();
   const [isValid, setIsValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
   function handleBlur(event: React.FocusEvent<HTMLInputElement>) {
-    let input = event.currentTarget;
-    if (!input?.checkValidity()) {
-      setIsValid(false);
-      setErrorMessage(input.validationMessage);
-    } else {
+    const input = event.currentTarget;
+
+    if (input?.checkValidity()) {
       setIsValid(true);
       setErrorMessage("");
     }
+  }
+
+  function handleInvalid(event: React.InvalidEvent<HTMLInputElement>) {
+    const input = event.currentTarget;
+    setIsValid(false);
+    setErrorMessage(input.validationMessage);
   }
 
   return (
@@ -36,6 +40,8 @@ export function TextField({ label, required }: TextFieldProps) {
         id={id}
         required={required}
         onBlur={handleBlur}
+        onInvalid={handleInvalid}
+        {...props}
       />
       <div className="text-red">{errorMessage}</div>
     </div>
