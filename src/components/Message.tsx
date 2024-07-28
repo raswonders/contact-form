@@ -3,21 +3,21 @@ import { Marker } from "./Marker";
 
 export function Message({ required }: { required?: boolean }) {
   const id = useId();
-  // const [isValid, setIsValid] = useState(true);
+  const [isValid, setIsValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
   function handleBlur(event: React.FocusEvent<HTMLTextAreaElement>) {
     const input = event.currentTarget;
 
     if (input?.checkValidity()) {
-      // setIsValid(true);
+      setIsValid(true);
       setErrorMessage("");
     }
   }
 
   function handleInvalid(event: React.InvalidEvent<HTMLTextAreaElement>) {
     const input = event.currentTarget;
-    // setIsValid(false);
+    setIsValid(false);
     setErrorMessage(input.validationMessage);
   }
 
@@ -28,7 +28,7 @@ export function Message({ required }: { required?: boolean }) {
         <Marker required={required} />
       </label>
       <textarea
-        className="w-full border border-gray-500 py-3 px-6 rounded-lg resize-none"
+        className={`w-full border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 focus:border-green-600 focus:outline-none py-3 px-6 rounded-lg resize-none`}
         name="message"
         id={id}
         rows={10}
