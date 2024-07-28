@@ -1,6 +1,5 @@
 import { Button } from "./Button";
 import { Checkbox } from "./Checkbox";
-import { CheckboxWithLabel } from "./CheckboxWithLabel";
 import { Message } from "./Message";
 import { RadioSelection } from "./RadioSelection";
 import { TextField } from "./TextField";
