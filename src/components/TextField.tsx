@@ -4,10 +4,16 @@ import { Marker } from "./Marker";
 
 interface TextFieldProps {
   label: string;
+  className?: string;
   required?: boolean;
 }
 
-export function TextField({ label, required, ...props }: TextFieldProps) {
+export function TextField({
+  label,
+  required,
+  className,
+  ...props
+}: TextFieldProps) {
   const id = useId();
   const [isValid, setIsValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -28,7 +34,7 @@ export function TextField({ label, required, ...props }: TextFieldProps) {
   }
 
   return (
-    <div className="space-y-2 font-karla">
+    <div className={`space-y-2 font-karla ${className}`}>
       <label htmlFor={id}>
         {label}
         <Marker required={required} />

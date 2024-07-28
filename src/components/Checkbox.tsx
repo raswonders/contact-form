@@ -29,7 +29,7 @@ export function Checkbox({ label, required, ...props }: CheckboxProps) {
   }
 
   return (
-    <div className="font-karla space-y-2">
+    <div className="font-karla space-y-2 py-10">
       <label htmlFor={id} className="flex gap-2 font-karla">
         <input
           id={id}

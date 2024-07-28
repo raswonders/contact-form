@@ -1,7 +1,13 @@
 import { useId, useState } from "react";
 import { Marker } from "./Marker";
 
-export function Message({ required }: { required?: boolean }) {
+export function Message({
+  required,
+  className,
+}: {
+  required?: boolean;
+  className?: string;
+}) {
   const id = useId();
   const [isValid, setIsValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -22,7 +28,7 @@ export function Message({ required }: { required?: boolean }) {
   }
 
   return (
-    <div className="font-karla space-y-2">
+    <div className={`font-karla space-y-2 ${className}`}>
       <label className="font-karla" htmlFor={id}>
         Message
         <Marker required={required} />

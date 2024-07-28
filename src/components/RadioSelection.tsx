@@ -8,12 +8,14 @@ interface RadioSelectionProps {
   title: string;
   options: string[];
   required?: boolean;
+  className?: string;
 }
 
 export function RadioSelection({
   title,
   options,
   required,
+  className,
 }: RadioSelectionProps) {
   const [optionSelected, setOptionSelected] = useState("");
   const [isValid, setIsValid] = useState(true);
@@ -35,17 +37,17 @@ export function RadioSelection({
   }
 
   return (
-    <fieldset className="space-y-2 font-karla">
+    <fieldset className={`space-y-2 font-karla ${className}`}>
       <legend>
         {title}
         <Marker required={required} />
       </legend>
-      <div className="space-y-4">
+      <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4">
         {options.map((option, i) => {
           return (
             <div
               key={option}
-              className={`flex gap-3 border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 focus:border-green-600 focus:outline-none rounded-lg`}
+              className={`col-span-1 border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 focus:border-green-600 focus:outline-none rounded-lg`}
             >
               <label className="w-full flex gap-2 text-lg  py-3 px-6">
                 <img
