@@ -47,7 +47,7 @@ export function RadioSelection({
           return (
             <div
               key={option}
-              className={`col-span-1 border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 active:bg-green-200 focus:border-green-600 focus:outline-none rounded-lg`}
+              className={`col-span-1 border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 ${optionSelected === option ? "bg-green-200 hover:bg-transparent" : ""} focus:border-green-600 focus:outline-none rounded-lg transition-colors duration-300 ease-out`}
             >
               <label className="w-full flex gap-2 text-lg  py-3 px-6">
                 <img
