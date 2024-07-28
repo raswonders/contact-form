@@ -47,15 +47,21 @@ export function RadioSelection({
           return (
             <div
               key={option}
-              className={`col-span-1 border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 ${optionSelected === option ? "bg-green-200 hover:bg-transparent" : ""} focus:border-green-600 focus:outline-none rounded-lg transition-colors duration-300 ease-out`}
+              className={`col-span-1 border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 ${optionSelected === option ? "bg-green-200 hover:bg-transparent text-green-600" : ""} focus:border-green-600 focus:outline-none rounded-lg transition-colors duration-300 ease-out transition-opacity`}
             >
-              <label className="w-full flex gap-2 text-lg  py-3 px-6">
-                <img
-                  src={
-                    optionSelected === option ? radioChecked : radioUnchecked
-                  }
-                  aria-hidden
-                />
+              <label className="w-full flex gap-2 items-center text-lg py-3 px-6">
+                <div className="relative w-6 h-6">
+                  <img
+                    className={`${optionSelected === option ? "opacity-100" : "opacity-0"} absolute inset-0 transition-opacity duration-300 ease-out`}
+                    src={radioChecked}
+                    aria-hidden
+                  />
+                  <img
+                    className={`${optionSelected !== option ? "opacity-100" : "opacity-0"} absolute inset-0 transition-opacity duration-300 ease-out`}
+                    src={radioUnchecked}
+                    aria-hidden
+                  />
+                </div>
                 <input
                   name={toCamelCase(title)}
                   type="radio"
