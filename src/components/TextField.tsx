@@ -40,7 +40,7 @@ export function TextField({
         <Marker required={required} />
       </label>
       <input
-        className={`w-full border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 focus:border-green-600 focus:outline-none py-3 px-6 rounded-lg`}
+        className={`w-full border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 active:border-green-600 focus:outline-none py-3 px-6 rounded-lg`}
         name={toCamelCase(label)}
         type="text"
         id={id}
