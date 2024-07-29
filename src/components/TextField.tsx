@@ -6,12 +6,14 @@ interface TextFieldProps {
   label: string;
   className?: string;
   required?: boolean;
+  type?: string;
 }
 
 export function TextField({
   label,
   required,
   className,
+  type,
   ...props
 }: TextFieldProps) {
   const id = useId();
@@ -42,7 +44,7 @@ export function TextField({
       <input
         className={`w-full border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 active:border-green-600 focus:outline-none py-3 px-6 rounded-lg`}
         name={toCamelCase(label)}
-        type="text"
+        type={type ? type : "text"}
         id={id}
         required={required}
         onBlur={handleBlur}

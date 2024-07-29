@@ -32,7 +32,12 @@ export function Card({ displayToast }: { displayToast: () => void }) {
         <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4">
           <TextField label="First Name" required />
           <TextField label="Last Name" required />
-          <TextField label="Email Address" required className="md:col-span-2" />
+          <TextField
+            label="Email Address"
+            type="email"
+            required
+            className="md:col-span-2"
+          />
           <RadioSelection
             title="Query Type"
             options={["General Enquiry", "Support Request"]}
