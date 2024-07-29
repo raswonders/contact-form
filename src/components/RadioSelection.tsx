@@ -63,7 +63,6 @@ export function RadioSelection({
                   />
                 </div>
                 <input
-                  tabIndex={0}
                   name={toCamelCase(title)}
                   type="radio"
                   value={option}
