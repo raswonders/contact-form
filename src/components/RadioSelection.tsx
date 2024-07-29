@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toCamelCase } from "../utils";
 import { Marker } from "./Marker";
 import radioChecked from "../assets/radio-checked.svg";
@@ -35,6 +35,17 @@ export function RadioSelection({
     setIsValid(false);
     setErrorMessage(input.validationMessage);
   }
+  useEffect(() => {
+    const handleFocus = (event) => {
+      console.log("Focused element:", event.target);
+    };
+
+    document.addEventListener("focusin", handleFocus);
+
+    return () => {
+      document.removeEventListener("focusin", handleFocus);
+    };
+  }, []);
 
   return (
     <fieldset className={`space-y-2 font-karla ${className}`}>
@@ -47,7 +58,7 @@ export function RadioSelection({
           return (
             <div
               key={option}
-              className={`col-span-1 border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 ${optionSelected === option ? "bg-green-200 hover:bg-green-200/0 text-green-600" : ""} focus:border-green-600 focus:outline-none rounded-lg transition duration-300 ease-out`}
+              className={`col-span-1 border ${isValid ? "border-gray-500" : "border-red"} hover:border-green-600 ${optionSelected === option ? "bg-green-200 hover:bg-green-200/0 text-green-600" : ""} rounded-lg transition duration-300 ease-out outline-2 -outline-offset-2 focus-within:outline focus-within:outline-green-600 focus-within:border-green-600`}
             >
               <label className="w-full flex gap-2 items-center text-lg py-3 px-6">
                 <div className="relative w-6 h-6">
@@ -63,6 +74,7 @@ export function RadioSelection({
                   />
                 </div>
                 <input
+                  tabIndex={0}
                   name={toCamelCase(title)}
                   type="radio"
                   value={option}
