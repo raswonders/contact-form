@@ -10,6 +10,7 @@ export function Card({ displayToast }: { displayToast: () => void }) {
 
     const data = new FormData(event.currentTarget);
     displayToast();
+    window.scrollTo({ top: 0, behavior: "smooth" });
     console.log([...data.entries()]);
   };
 
