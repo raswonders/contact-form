@@ -6,7 +6,10 @@ interface ButtonProps {
 export function Button({ value, type = "button" }: ButtonProps) {
   return (
     <div className="relative font-karla text-white font-bold p-0 m-0 box-border">
-      <input className="relative z-5 w-full border border-gray-500 rounded-lg bg-green-600 py-4 px-8" />
+      <input
+        type="button"
+        className="relative z-5 w-full border border-gray-500 rounded-lg bg-green-600 py-4 px-8"
+      />
       <input
         value={value}
         type={type}
