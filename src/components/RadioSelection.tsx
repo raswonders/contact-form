@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toCamelCase } from "../utils";
 import { Marker } from "./Marker";
 import radioChecked from "../assets/radio-checked.svg";
