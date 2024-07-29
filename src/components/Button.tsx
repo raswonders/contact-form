@@ -9,11 +9,12 @@ export function Button({ value, type = "button" }: ButtonProps) {
       <input
         type="button"
         className="relative z-5 w-full border border-gray-500 rounded-lg bg-green-600 py-4 px-8"
+        tabIndex={-1}
       />
       <input
         value={value}
         type={type}
-        className="absolute inset-0 w-full h-full border border-transparent flex justify-center items-center rounded-lg text-white z-10 bg-black/0 hover:bg-black/50 transition-colors duration-300 ease-out"
+        className="absolute inset-0 w-full h-full border border-transparent flex justify-center items-center rounded-lg text-white z-10 bg-black/0 hover:bg-black/50 transition-colors duration-300 ease-out outline-offset-4 focus:outline-green-600 focus:border-green-600"
       />
     </div>
   );
