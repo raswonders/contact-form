@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "./Button";
 import { Checkbox } from "./Checkbox";
 import { Message } from "./Message";
@@ -5,12 +6,15 @@ import { RadioSelection } from "./RadioSelection";
 import { TextField } from "./TextField";
 
 export function Card({ displayToast }: { displayToast: () => void }) {
+  const [counter, setCounter] = useState(0);
+
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
 
     const data = new FormData(event.currentTarget);
     displayToast();
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setCounter((prev) => prev + 1);
     console.log([...data.entries()]);
   };
 
@@ -19,7 +23,12 @@ export function Card({ displayToast }: { displayToast: () => void }) {
       <h1 className="text-gray-900 text-[32px] -tracking-[1px] leading-none font-karla font-bold">
         Contact Us
       </h1>
-      <form action="" onSubmit={handleSubmit} className="flex flex-col">
+      <form
+        action=""
+        onSubmit={handleSubmit}
+        className="flex flex-col"
+        key={`form-${counter}`}
+      >
         <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4">
           <TextField label="First Name" required />
           <TextField label="Last Name" required />
