@@ -31,21 +31,23 @@ export function Checkbox({ label, required, ...props }: CheckboxProps) {
   return (
     <div className="font-karla space-y-2 py-10">
       <label htmlFor={id} className="flex gap-2 font-karla">
-        <input
-          id={id}
-          type="checkbox"
-          checked={isChecked}
-          {...props}
-          onChange={() => setIsChecked(!isChecked)}
-          className="sr-only"
-          required={required}
-          onBlur={handleBlur}
-          onInvalid={handleInvalid}
-        />
-        <img
-          src={isChecked ? checkmarkChecked : checkmarkUnchecked}
-          aria-hidden
-        />
+        <div className="focus-within:outline-green-600 focus-within:outline focus-within:outline-2 rounded">
+          <input
+            id={id}
+            type="checkbox"
+            checked={isChecked}
+            {...props}
+            onChange={() => setIsChecked(!isChecked)}
+            className="sr-only"
+            required={required}
+            onBlur={handleBlur}
+            onInvalid={handleInvalid}
+          />
+          <img
+            src={isChecked ? checkmarkChecked : checkmarkUnchecked}
+            aria-hidden
+          />
+        </div>
         <span>
           {label}
           <Marker required={required} />
