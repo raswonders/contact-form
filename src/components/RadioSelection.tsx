@@ -35,17 +35,6 @@ export function RadioSelection({
     setIsValid(false);
     setErrorMessage(input.validationMessage);
   }
-  useEffect(() => {
-    const handleFocus = (event) => {
-      console.log("Focused element:", event.target);
-    };
-
-    document.addEventListener("focusin", handleFocus);
-
-    return () => {
-      document.removeEventListener("focusin", handleFocus);
-    };
-  }, []);
 
   return (
     <fieldset className={`space-y-2 font-karla ${className}`}>
