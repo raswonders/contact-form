@@ -6,15 +6,11 @@ interface ButtonProps {
 export function Button({ value, type = "button" }: ButtonProps) {
   return (
     <div className="relative font-karla text-white font-bold p-0 m-0 box-border">
-      <input
-        type="button"
-        className="relative z-5 w-full border border-gray-500 rounded-lg bg-green-600 py-4 px-8"
-        tabIndex={-1}
-      />
+      <div className="absolute inset-0 z-0 w-full border border-gray-500 rounded-lg bg-green-600 "></div>
       <input
         value={value}
         type={type}
-        className="absolute inset-0 w-full h-full border border-transparent flex justify-center items-center rounded-lg text-white z-10 bg-black/0 hover:bg-black/50 transition-colors duration-300 ease-out outline-offset-4 focus:outline-green-600 focus:border-green-600"
+        className="relative z-1 w-full py-4 px-8 border border-transparent flex justify-center items-center rounded-lg text-white z-10 bg-black/0 hover:bg-black/50 transition-colors duration-300 ease-out outline-offset-4 focus:outline-green-600 focus:border-green-600"
       />
     </div>
   );
